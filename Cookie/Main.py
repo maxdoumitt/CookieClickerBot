@@ -5,6 +5,10 @@ import time
 #Detects if you have enough to buy a boost
 boostcorner = pyautogui.locateOnScreen('img/boostcorner.png')
 
+#Isn't actually used for anything but determining the pixel Coords for stuff when I need to
+def findCoords():
+    pyautogui.moveTo(1800, 1000, 0.4)
+
 #move to cookie and click
 def moveCookie():  
     pyautogui.moveTo(300, 400, duration = .04)
@@ -22,10 +26,10 @@ def clickUpgrade():
 #attempts to buy each upgrade 5 times
 #doesn't buy CURSOR upgrade for some reason (fixed with clickUpgrade)
 def upgradeClick():  
-    pyautogui.moveTo(1800, 800, 1)
+    pyautogui.moveTo(1800, 1000, 1)
     pyautogui.PAUSE = 0.00001
     time.sleep(0.3)
-    for i in range(9):
+    for i in range(12):
         for i in range(5):
             pyautogui.click()
         pyautogui.moveRel(0, -65, .3)
@@ -75,9 +79,9 @@ def goldenCookie():
         x += 3
 print("LOSER") #this is funny because I accidentally tabbed this back instead of deleting it but the script calls you a loser for no reason immediately everytime you run it lol.
 
-#clears achievements bc they are annoying. only works if there are two or more which is kinda dumb but I'm too lazy to change it.
+#clears achievements bc they are annoying.
 def achievement():
-    pyautogui.moveTo(1110, 1010, 0.3)
+    pyautogui.moveTo(1090, 980, 0.3)
     pyautogui.click()
 
 #Meant to sit and make a bunch of cookies in anticipation of buying a boost.
